@@ -39,6 +39,15 @@ switch (userType) {
     case "subscriber":
         userCategory = "Subscriber";
         break;
+    case "employee":
+        userCategory = "Employee";
+        break;
+    case "enrolledMember":
+        userCategory = "Enrolled Member";
+        break;
+    case "nonSubscriber":
+        userCategory = "Non-subscriber";
+        break;
     default:
         userCategory = "Unknown";
 }
@@ -49,3 +58,25 @@ let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not Authenticated";
 
 console.log("Authentication Status: ", authenticationStatus);
+
+let dietaryServices = userCategory;
+let dietaryOptions;
+
+switch(dietaryServices) {
+    case "Employee":
+        dietaryOptions = "Full Dietary Service and Health Program Access";
+        break;
+    case "Enrolled Member":
+        dietaryOptions = "Dietary Services and one-on-one interaction with dietician";
+        break;
+    case "Subscriber":
+        dietaryOptions = "Partial Access Dietary Services";
+        break;
+    case "Non-subscriber":
+        dietaryOptions = "No Dietary Service Acess. You need to Enroll as a member or become a subscriber.";
+        break;
+    default:
+        dietaryOptions = "Unavailable";
+}
+
+console.log("Dietary Service: ", dietaryOptions);
