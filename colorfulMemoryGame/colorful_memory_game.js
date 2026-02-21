@@ -21,7 +21,7 @@ function generateCards() {
 }
 
 function shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i++) {
+    for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j] = arr[j], arr[i]];
     }
@@ -59,7 +59,7 @@ function checkMatch() {
 
 function startGame() {
     let timeLeft = 30;
-    startbtn.disable = true;
+    startbtn.disabled = true;
     score = 0; // Reset score to zero
     scoreElement.textContent = `Score: ${score}`;
     startGameTimer(timeLeft);
